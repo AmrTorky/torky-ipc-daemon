@@ -23,7 +23,7 @@ int main() {
         ptr[0].fim_metric_mantissa = 738;
         ptr[0].phase_coherence_rad = 4870;
         ptr[0].autopoietic_status_flags = 0x07;
-        ::munmap(ptr, sizeof(torky::continuum::TORKY_CELL_DTYPE) * 16) < 0) { ::close(shm_fd); return 1; }
+        if (::munmap(ptr, sizeof(torky::continuum::TORKY_CELL_DTYPE) * 16) < 0) { ::close(shm_fd); return 1; }
     }
     ::close(shm_fd);
 
